@@ -2,9 +2,11 @@
 const Sealious = require("sealious");
 const App = new Sealious.App();
 
+
+
 var Users = App.ChipManager.get_chip("collection", "users");
 
-Users.add_fields({ name: "is_restaurant", type: "boolean" })
+Users.add_fields([{ name: "is_restaurant", type: "boolean" }])
 
 Users.set_access_strategy({
 	create: "public",
@@ -23,9 +25,9 @@ const orders = App.createCollection({
 	],
 	access_strategy: {
 		create: "public",
-		retrieve: ["or", ["owner", "restaurant"]],
-		delete: ["or", ["owner", "restaurant"]],
-		update: ["or", ["owner", "restaurant"]]
+		// retrieve: ["or", ["owner", "restaurant"]],
+		// delete: ["or", ["owner", "restaurant"]],
+		// update: ["or", ["owner", "restaurant"]]
 	}
 });
 

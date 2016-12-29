@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/flow2code/book-food-api#readme",
   "dependencies": {
-    "sealious": "github:sealcode/sealious#alpha"
+    "sealious": "github:sealcode/sealious#alpha",
+	"sealious-www-server": "sealcode/sealious-www-server#alpha",
+	"sealious-datastore-mongo": "github:sealcode/sealious-datastore-mongo#alpha"
   }
 }

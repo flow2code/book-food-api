@@ -3,5 +3,5 @@ core:
 www-server:
   port: 8081
 datastore_mongo:
-  host: book-food
+  host: localhost
   db_name: book-food-api
