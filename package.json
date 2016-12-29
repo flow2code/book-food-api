@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/flow2code/book-food-api/issues"
   },
-  "homepage": "https://github.com/flow2code/book-food-api#readme"
+  "homepage": "https://github.com/flow2code/book-food-api#readme",
+  "dependencies": {
+    "sealious": "github:sealcode/sealious#alpha"
+  }
 }

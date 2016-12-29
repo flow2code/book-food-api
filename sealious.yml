@@ -1,0 +1,7 @@
+core:
+  datastore: mongo
+www-server:
+  port: 8081
+datastore_mongo:
+  host: book-food
+  db_name: book-food-api

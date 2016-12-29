@@ -4,9 +4,7 @@ const App = new Sealious.App();
 
 var Users = App.ChipManager.get_chip("collection", "users");
 
-Users.add_fields({
-	{name: "is_restaurant", type: "boolean"}
-})
+Users.add_fields({ name: "is_restaurant", type: "boolean" })
 
 Users.set_access_strategy({
 	create: "public",
@@ -30,6 +28,9 @@ const orders = App.createCollection({
 		update: ["or", ["owner", "restaurant"]]
 	}
 });
+
+
+App.start()
 
 // TODO:
 //  0. add declartions for start sealious and config yml for mongodb
