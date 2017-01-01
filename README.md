@@ -14,11 +14,37 @@ organize your orders schedule
 
 ## usage
 
-### specification
+### Specifications
 `GET http://localhost:8081/api/v1/specifications`
 
-### users
-`GET http://localhost:8081/api/v1/users`
+### Users
+- create user
+`POST http://localhost:8081/api/v1/users`
 
-### orders
+```
+{
+	username: text,
+	password: text,
+	is_restaurant: boolean
+}
+```
+- login
+`POST http://localhost:8081/api/v1/sessions`
+
+```
+{
+	username: username,
+	password: password
+}
+```
+- logout
+`DELETE http://localhost:8081/api/v1/sessions/current`
+- about me: `GET http://localhost:8081/api/v1/users/me`
+- all users: `GET http://localhost:8081/api/v1/users`
+- only restaurants: `GET http://localhost:8081/api/v1/collections/users?filter[is_restaurant]=true`
+- only clients: `GET http://localhost:8081/api/v1/collections/users?filter[is_restaurant]=false`
+
+
+
+### Orders
 `http://localhost:8081/api/v1/collections/orders`
