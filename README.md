@@ -47,4 +47,14 @@ organize your orders schedule
 
 
 ### Orders
+
+- create order:
 `http://localhost:8081/api/v1/collections/orders`
+
+```
+{
+	restaurant: id_restaurant,
+	content: text,
+	datetime: datetime
+}
+```

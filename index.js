@@ -11,8 +11,8 @@ Users.add_fields([{ name: "is_restaurant", type: "boolean" }])
 Users.set_access_strategy({
 	create: "public",
 	retrieve: "public",
-	update: "noone",
-	delete: "noone"
+	// update: "owner",
+	// delete: "owner"
 })
 
 // -------------------------------
@@ -25,7 +25,7 @@ const orders = App.createCollection({
 		{name: "datetime", type: "datetime"},
 	],
 	access_strategy: {
-		create: "logged_in",
+		// create: "logged_in",
 		retrieve: "owner",
 		delete: "owner",
 		update: "owner"
