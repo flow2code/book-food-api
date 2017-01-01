@@ -3,9 +3,7 @@ const Sealious = require("sealious");
 const App = new Sealious.App();
 
 var Users = App.ChipManager.get_chip("collection", "users");
-
 Users.add_fields([{ name: "is_restaurant", type: "boolean" }])
-
 Users.set_access_strategy({
 	create: "public",
 	retrieve: "public",
@@ -13,26 +11,7 @@ Users.set_access_strategy({
 	// delete: "owner"
 })
 
-const orders = App.createCollection({
-	name: "orders",
-	fields: [
-		{name: "restaurant", type: "single_reference", params: {collection: "users"}, required: true}, //send request to orders with id of restaurant
-		{name: "content", type: "text", required: true},
-		{name: "datetime", type: "datetime"},
-	],
-	access_strategy: {
-		// create: "logged_in",
-		retrieve: "owner",
-		delete: "owner",
-		update: "owner"
-		// retrieve: ["or", ["owner", "restaurant"]],
-		// delete: ["or", ["owner", "restaurant"]],
-		// update: ["or", ["owner", "restaurant"]]
-	}
-});
-
+// require("./lib/access-strategies/restaurant-access.js")(App);
+require("./lib/collections/orders.js")(App);
 
 App.start()
-
-// TODO:
-//  3. create access_strategy for restaurant
